@@ -200,11 +200,7 @@ void usercontrol( void ) {
     // Each time through the loop your program should update motor + servo 
     // values based on feedback from the joysticks
      
-        
-
-        
-    vex::task::sleep(10);
- 
+    wait(5,msec);
       
     RightBack.spin(vex::directionType::fwd, 0.4*deadzone(Controller1.Axis1.value()) - deadzone(Controller1.Axis3.value()), vex::velocityUnits::pct);
     LeftFront.spin(vex::directionType::fwd, 0.4*deadzone(Controller1.Axis1.value()) + deadzone(Controller1.Axis3.value()), vex::velocityUnits::pct);
@@ -241,11 +237,11 @@ void usercontrol( void ) {
       
       if(Controller1.ButtonR1.pressing()){
 
-        roller.spin(vex::directionType::fwd, 80, vex::velocityUnits::pct);
+        roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
           
           
       } else if(Controller1.ButtonR2.pressing()){
-        roller.spin(vex::directionType::fwd, -80, vex::velocityUnits::pct);
+        roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
           
       } 
       else{
