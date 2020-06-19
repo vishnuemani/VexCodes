@@ -11,6 +11,7 @@ extern motor Intake;
 extern motor Intake2;
 extern motor Lift1;
 extern motor roller;
+extern motor highRoller;
 extern controller Controller1;
 
 /**
