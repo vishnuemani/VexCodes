@@ -200,12 +200,12 @@ void usercontrol( void ) {
       if(Controller1.ButtonR1.pressing()){
 
         roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
-        highRoller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
           
           
       } else if(Controller1.ButtonR2.pressing()){
         roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
-        highRoller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
           
       } 
       else{
