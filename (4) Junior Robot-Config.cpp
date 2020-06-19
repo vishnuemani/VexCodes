@@ -14,7 +14,7 @@ motor LeftFront = motor(PORT1, ratio18_1, false);
 motor RightFront = motor(PORT15, ratio18_1, false);
 motor Intake = motor(PORT17, ratio18_1, false);
 motor Intake2 = motor(PORT19, ratio18_1, false);
-motor Lift1 = motor(PORT9, ratio18_1, false);
+motor highRoller = motor(PORT9, ratio18_1, false);
 motor roller = motor(PORT14, ratio18_1, false);
 controller Controller1 = controller(primary);
 
