@@ -175,21 +175,7 @@ void turn(){
 
 void usercontrol( void ) {
   // User control code here, inside the loop
-  bool toggle = true;
-  bool otherToggle = true;
-  bool liftstopped = true;
-  bool liftstoppedup = true;
-
-  float topSpeed = 50.0;
-  float minSpeed = 0;
-  float maxAngle = -1391.0;
-  float minAngle = -41.0;
-  
-
-  
-  
-
-  
+ 
   while (1) {
     
     //Brain.Screen.print(speed);
@@ -207,45 +193,24 @@ void usercontrol( void ) {
     RightFront.spin(vex::directionType::fwd, 0.4*deadzone(Controller1.Axis1.value()) - deadzone(Controller1.Axis3.value()), vex::velocityUnits::pct);
     LeftBack.spin(vex::directionType::fwd, 0.4*deadzone(Controller1.Axis1.value()) + deadzone(Controller1.Axis3.value()), vex::velocityUnits::pct);
 
+    
       
-     
-    //THIS IS FOR LIFTS:      
-     if(Controller1.ButtonX.pressing()){
-          Lift1.spin(vex::directionType::fwd, 50, vex::velocityUnits::pct);
-          liftstopped = false;
-         
-          
-      }else if(Controller1.ButtonB.pressing()){
-          Lift1.spin(vex::directionType::fwd, -90, vex::velocityUnits::pct);
-          liftstopped = false;
-          
-          
-      }else if(Controller1.ButtonR2.pressing()){
-          sleep(200);
-          Lift1.rotateTo(820,vex::rotationUnits::deg,80,vex::velocityUnits::pct, false);
-          liftstoppedup = false;
-      }else if(Controller1.ButtonR1.pressing()){
-          sleep(200);
-          Lift1.rotateTo(1180,vex::rotationUnits::deg,80,vex::velocityUnits::pct,false);
-          liftstoppedup = false;
-      }else if(!(liftstopped)){
-          Lift1.stop(vex::brakeType::hold);
-          liftstopped = true;
-      }
-      
-      //THIS IS FOR Roller Motor::
+      //THIS IS FOR Roller Motors::
       
       if(Controller1.ButtonR1.pressing()){
 
         roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
           
           
       } else if(Controller1.ButtonR2.pressing()){
         roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
           
       } 
       else{
         roller.stop(vex::brakeType::hold);
+        highRoller.stop(vex::brakeType::hold);
       }
       
       
