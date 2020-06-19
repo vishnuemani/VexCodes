@@ -12,6 +12,10 @@ motor LeftBack = motor(PORT11, ratio18_1, false);
 motor RightBack = motor(PORT13, ratio18_1, false);
 motor LeftFront = motor(PORT1, ratio18_1, false);
 motor RightFront = motor(PORT15, ratio18_1, false);
+
+motor_group Drive_Left = motor_group(LeftBack, LeftFront);
+motor_group Drive_Right = motor_group(RightBack, RightFront);
+
 motor Intake = motor(PORT17, ratio18_1, false);
 motor Intake2 = motor(PORT19, ratio18_1, false);
 motor highRoller = motor(PORT9, ratio18_1, false);
