@@ -212,7 +212,25 @@ void usercontrol( void ) {
         roller.stop(vex::brakeType::hold);
         highRoller.stop(vex::brakeType::hold);
       }
+
+
+
+
       
+      if(Controller1.ButtonUp.pressing()){
+
+        index_roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+        
+          
+          
+      } else if(Controller1.ButtonDown.pressing()){
+        index_roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
+        
+          
+      } 
+      else{
+        index_roller.stop(vex::brakeType::hold);
+      }
       
       
       
