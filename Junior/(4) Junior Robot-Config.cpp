@@ -20,6 +20,8 @@ motor Intake = motor(PORT17, ratio18_1, false);
 motor Intake2 = motor(PORT19, ratio18_1, false);
 motor highRoller = motor(PORT16, ratio18_1, false);
 motor roller = motor(PORT14, ratio18_1, false);
+
+motor index_roller = motor(PORT11, ratio18_1, false);
 controller Controller1 = controller(primary);
 
 // VEXcode generated functions
