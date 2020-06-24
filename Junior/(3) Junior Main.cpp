@@ -196,41 +196,56 @@ void usercontrol( void ) {
     
       
       //THIS IS FOR Roller Motors::
+
+      //SYNCHROUSLY UP:
       
       if(Controller1.ButtonR1.pressing()){
 
         roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
         highRoller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
+        index_roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
           
-          
-      } else if(Controller1.ButtonR2.pressing()){
-        roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
-        highRoller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
           
       } 
-      else{
-        roller.stop(vex::brakeType::hold);
-        highRoller.stop(vex::brakeType::hold);
+      //SYNCHRONOUSLY DOWN:
+      else if(Controller1.ButtonR2.pressing()){
+        roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+        index_roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+          
       }
 
-
-
-
-      
-      if(Controller1.ButtonUp.pressing()){
-
-        index_roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+      //SPIT OUT A BALL:
+       else if(Controller1.ButtonUp.pressing()){
+        roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
+        index_roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
         
           
-          
-      } else if(Controller1.ButtonDown.pressing()){
+      }
+      //PULL IN A BALL:
+      else if(Controller1.ButtonDown.pressing()){
+        roller.spin(vex::directionType::fwd, 100, vex::velocityUnits::pct);
+        highRoller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
         index_roller.spin(vex::directionType::fwd, -100, vex::velocityUnits::pct);
         
           
       } 
+
+      
+
       else{
+        roller.stop(vex::brakeType::hold);
+        highRoller.stop(vex::brakeType::hold);
         index_roller.stop(vex::brakeType::hold);
       }
+
+
+
+
+
+        
+      
       
       
       
